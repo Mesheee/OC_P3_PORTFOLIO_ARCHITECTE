@@ -8,24 +8,35 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
 	<meta name="description" content="">
+	<script src="https://kit.fontawesome.com/4b70c93fe2.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
+
+
+<!-- Header-->
 <header>
-	<h1>Sophie Bluel <span>Architecte d'inteérieur</span></h1>
+	<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
 	<nav>
 		<ul>
-			<li>projets</li>
-			<li>contact</li>
-			<li>login</li>
-			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
-		</ul>
+			<li><a href="index.html">projets</a></li>
+			<li><a href="#contact">contact</a></li>
+			<li><a id="loginLink" href="login.html">login</a></li>
+			<li><img src="./assets/icons/instagram.png" alt="Instagram" /></li>
+		  </ul>
 	</nav>
 </header>
+
+<!-- Introduction-->
 <main>
 	<section id="introduction">
 		<figure>
 			<img src="./assets/images/sophie-bluel.png" alt="">
+			<!-- Mofif admin mode-->
+			<button class="button_modif_intro" id="adminMode">
+				<i class="fa-regular fa-pen-to-square"></i>
+				<p>Modifier</p>
+			  </button>
 		</figure>
 		<article>
 			<h2>Designer d'espace</h2>
@@ -34,55 +45,25 @@
 			<p>En cas de besoin, une équipe pluridisciplinaire peut-être constituée : architecte DPLG, décorateur(trice)</p>
 		</article>
 	</section>
-	<section id="portfolio">
+
+  <!-- Portfolio-->
+  <section id="portfolio">
+	<div class="projects_title">
 		<h2>Mes Projets</h2>
+		<button class="button_modif_modal" id="adminMode">
+            <i class="fa-regular fa-pen-to-square"></i>
+            <p>Modifier</p>
+          </button> 
+	</div>
+      
+    <div id="contener_filters">
+      <div id="filters"></div>
+    </div>
 		<div class="gallery">
-			<figure>
-				<img src="assets/images/abajour-tahina.png" alt="Abajour Tahina">
-				<figcaption>Abajour Tahina</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/appartement-paris-v.png" alt="Appartement Paris V">
-				<figcaption>Appartement Paris V</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/restaurant-sushisen-londres.png" alt="Restaurant Sushisen - Londres">
-				<figcaption>Restaurant Sushisen - Londres</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/la-balisiere.png" alt="Villa “La Balisiere” - Port Louis">
-				<figcaption>Villa “La Balisiere” - Port Louis</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/structures-thermopolis.png" alt="Structures Thermopolis">
-				<figcaption>Structures Thermopolis</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/appartement-paris-x.png" alt="Appartement Paris X">
-				<figcaption>Appartement Paris X</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/le-coteau-cassis.png" alt="Pavillon “Le coteau” - Cassis">
-				<figcaption>Pavillon “Le coteau” - Cassis</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/villa-ferneze.png" alt="Villa Ferneze - Isola d’Elba">
-				<figcaption>Villa Ferneze - Isola d’Elba</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/appartement-paris-xviii.png" alt="Appartement Paris XVIII">
-				<figcaption>Appartement Paris XVIII</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/bar-lullaby-paris.png" alt="Bar “Lullaby” - Paris">
-				<figcaption>Bar “Lullaby” - Paris</figcaption>
-			</figure>
-			<figure>
-				<img src="assets/images/hotel-first-arte-new-delhi.png" alt="Hotel First Arte - New Delhi">
-				<figcaption>Hotel First Arte - New Delhi</figcaption>
-			</figure>
 		</div>
 	</section>
+
+  <!-- Contact-->
 	<section id="contact">
 		<h2>Contact</h2>
 		<p>Vous avez un projet ? Discutons-en !</p>
@@ -98,6 +79,7 @@
 	</section>
 </main>
 
+<!-- Footer-->
 <footer>
 	<nav>
 		<ul>
@@ -105,5 +87,58 @@
 		</ul>
 	</nav>
 </footer>
+
+ <!--Admin-->
+
+	<!--Edit mode-->
+    <div class="editMode" id="adminMode">
+        <i class="fa-regular fa-pen-to-square"></i>
+        <p>Mode édition</p>
+        <button type="button">publier les changements</button>
+      </div>
+
+  	<!--Modale 1-->
+      <aside id="modal1" class="modal">
+        <div class="modal_wrapper">
+          <i class="fa-solid fa-xmark"></i>
+          <h3>Galerie photo</h3>
+          <div class="gallery_modal"></div>
+          <button class="button_add_images">Ajouter une photo</button>
+          <button class="button_delete_gallery">Supprimer la galerie</button>
+        </div>
+      </aside>
+  
+	  <!--Modale 2-->
+      <aside id="modal2" class="modal">
+        <div class="modal_wrapper">
+          <div class="icones">
+            <i class="fa-solid fa-arrow-left"></i>
+            <a href=""><i class="fa-solid fa-xmark"></i></a>
+          </div>
+          <div class="modal_components">
+			<h3>Ajout photo</h3>
+            	<div class="bloc_add_images">
+              		<i class="fa-sharp fa-regular fa-image"></i>
+              		<button id="button_add_new_images">+ Ajouter photo</button>
+              		<input type="file" id="input-file" accept="image/png, image/jpeg" max="4000000"/>
+             		<p class="conditions">jpg, png : 4mo max</p>
+            	</div>
+            <form action="submit">
+              <label for="title">Titre</label>
+              <input type="text" id="title" name="title" />
+              <label for="category_list">Catégorie</label>
+              <select id="category_list" name="category_list">
+                <option value="none"></option>
+              </select>
+            </form>
+          </div>
+          <button class="button_validate">Valider</button>
+        </div>
+      </aside>
+
+<script src="./assets/JS/index.js"></script>
+<script src="./assets/JS/admin.js"></script>
+<script src="./assets/JS/login.js"></script>
+
 </body>
 </html>
