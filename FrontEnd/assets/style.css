@@ -353,8 +353,8 @@ footer nav ul {
 	font-size: 1.6em;
 }
 .gallery_modal{
-	width: 70%;
-	height: 70%;
+	width: 80%;
+	height: 60%;
 	border-bottom: 1px solid #B3B3B3;
 	display: flex;
 	flex-wrap: wrap;
@@ -362,6 +362,7 @@ footer nav ul {
     align-items: center;
 	justify-content: space-between;
 	align-content: center;
+	margin: 20px 0px 20px 0px;
 }
 .fa-xmark {
 	margin-left: 90%;
@@ -371,13 +372,27 @@ footer nav ul {
 	cursor: pointer;
 }
 .gallery_modal img{
-	width: 100%;
-	height: 12vh;
+	width: 80px;
+	height: 105px;
 	object-fit: cover;
 }
-.icon{
-	object-fit: none !important;
-}
+.figureEdit {
+	position: relative;
+  }
+.editIcon {
+	position: absolute;
+	top: 0;
+	right: 0;
+	color: white;
+    background-color: black;
+	border-radius: 3px;
+    width: 25%;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	margin: 5px;
+  }
 .button_add_images{
 	font-family: 'Syne';
 	font-size: 1.1em;
@@ -403,30 +418,6 @@ footer nav ul {
 }
 .container_Img i {
 	color: white;
-}
-.container_Icon_Trash{
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 15px;
-	height: 15px;
-	background-color: black;
-	position: absolute;
-	border-radius: 2px;
-	top: 5%;
-	left: 70%;
-}
-.container_Icon_Cross{
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 15px;
-	height: 15px;
-	background-color: black;
-	position: absolute;
-	border-radius: 2px;
-	top: 5%;
-	left: 42%;
 }
 
 /*Modale 2*/
