@@ -50,9 +50,14 @@ table {
 body {
 	max-width: 1140px;
 	margin:auto;
+	margin-top: 80px;
 	font-family: 'Work Sans' ;
 	font-size: 14px;
 	background-color: #FFFEF8;
+}
+
+main {
+	margin: 0px 60px 0px 60px;
 }
 header {
 	display: flex;
@@ -113,7 +118,7 @@ a {
 }
 #introduction img {
 	display: block;
-	margin: auto;
+	margin: 0;
 	width: 80%;
 }
 #introduction article {
@@ -139,7 +144,11 @@ a {
 }
 .gallery img {
 	width: 100%;
-
+}
+.project_title_gallery {
+	font-size: 1.1em;
+	margin-top: 10px;
+	font-weight: 400;
 }
 #contact {
 	width: 50%;
@@ -284,7 +293,7 @@ footer nav ul {
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 45px;
+	height: 50px;
 }
 .editMode button{
 	background-color: white;
@@ -299,7 +308,6 @@ footer nav ul {
 .button_modif_intro{
 	display: flex;
 	margin-top: 20px;
-	margin-left: 50px;
 	width: 10%;
 	gap: 10px;
 	border: none;
@@ -392,7 +400,12 @@ footer nav ul {
     align-items: center;
     justify-content: center;
 	margin: 5px;
+	cursor: pointer;
   }
+  .editIcon:hover {
+	background-color: #B1663C;
+  }
+
 .button_add_images{
 	font-family: 'Syne';
 	font-size: 1.1em;
@@ -447,7 +460,7 @@ footer nav ul {
 .bloc_add_images {
 	position: relative;
 	width: 100%;
-	height: 40%;
+	height: 35%;
 	background-color: #E8F1F6;
 	display: flex;
 	align-items: center;
@@ -458,11 +471,11 @@ footer nav ul {
 	color: #B9C5CC;
 	font-size: 4em;
 }
-.bloc_add_images button{
+#button_new_images{
 	background-color: #CBD6DC;
 	border: none;
-	width: 35%;
-	height: 40px;
+	width: 30%;
+	height: 35px;
 	border-radius: 25px;
 	font-family: 'Work Sans';
 	font-size: 14px;
@@ -472,8 +485,7 @@ footer nav ul {
 	cursor: pointer;
 }
 .conditions {
-	font-size: 10px;
-	height: 20%;
+	font-size: 0.8em;
 }
 .modal_components form input {
 	width: 100%;
@@ -482,7 +494,7 @@ footer nav ul {
 	outline: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
-#input-file{
+#input_file{
 	display: none;
 }
 .bloc_add_images img {
@@ -512,11 +524,18 @@ footer nav ul {
 	font-size: 16px;
 	font-weight: 500;
 }
+#title {
+	padding-left: 10px;
+	font-family: 'Work Sans';
+	font-size: 1em;
+}
 #category_list{
 	width: 100%;
 	height: 25%;
 	border: none;	
+	padding-left: 10px;
 	font-family: 'Work Sans';
+	font-size: 1em;
 	outline: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
