@@ -191,10 +191,6 @@ input[type="submit"]{
 	border-radius: 60px ;
 	cursor: pointer;
 }
-input[type="submit"]:hover {
-	background-color: #B1663C;
-	transition: 0.4s;
-}
 footer nav ul {
 	display: flex;
 	justify-content: flex-end;
@@ -202,7 +198,6 @@ footer nav ul {
 }
 
 /* Filtres */
-
 #contener_filters {	
 	width: 100%;
 	display: flex;
@@ -222,7 +217,6 @@ footer nav ul {
 	text-align: center;
 	padding: 10px 25px 10px 25px;
     cursor: pointer;
-
   }
 .button_filters:hover{
 	background-color: #1D6154;
@@ -231,7 +225,6 @@ footer nav ul {
 }
 
 /* Login */
-
 #login_form {
 	width: 50%;
 	margin: auto;
@@ -275,7 +268,6 @@ footer nav ul {
 }
 
 /*Admin mode*/
-
 #adminMode {
 	display: none;
 }
@@ -317,7 +309,6 @@ footer nav ul {
 
 /* Modales */
 /* Modale1 */
-
 .button_modif_modal{
 	display: flex;
 	gap: 10px;
@@ -368,9 +359,11 @@ footer nav ul {
 	flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
-	justify-content: space-between;
+	justify-content: left;
+	gap: 10px;
 	align-content: center;
 	margin: 20px 0px 20px 0px;
+	padding-bottom: 20px;
 }
 .fa-xmark {
 	margin-left: 90%;
@@ -404,12 +397,12 @@ footer nav ul {
   }
   .editIcon:hover {
 	background-color: #B1663C;
+	transition: 0.2s;
   }
-
 .button_add_images{
 	font-family: 'Syne';
 	font-size: 1.1em;
-	width: 35%;
+	width: 40%;
 	height: 40px;
 	background-color: #1D6154;
 	border: none;
@@ -434,7 +427,6 @@ footer nav ul {
 }
 
 /*Modale 2*/
-
 #modal2 {
 	display: none;
 }
@@ -488,7 +480,7 @@ footer nav ul {
 	font-size: 0.8em;
 }
 .modal_components form input {
-	width: 100%;
+	width: 98%;
 	height: 25%;
 	border: none;
 	outline: none;
@@ -496,6 +488,9 @@ footer nav ul {
 }
 #input_file{
 	display: none;
+}
+input[type="text" i] {
+    padding: 0px;
 }
 .bloc_add_images img {
 	display: block;
@@ -524,10 +519,10 @@ footer nav ul {
 	font-size: 16px;
 	font-weight: 500;
 }
-#title {
-	padding-left: 10px;
+#input_title {
 	font-family: 'Work Sans';
 	font-size: 1em;
+	padding-left: 10px;
 }
 #category_list{
 	width: 100%;
@@ -539,7 +534,7 @@ footer nav ul {
 	outline: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
-.button_validate {
+.validate_button {
 	background-color: #A7A7A7;
 	border: none;
 	border-radius: 60px;
@@ -551,7 +546,7 @@ footer nav ul {
 	font-size: 14px;
 	cursor: pointer;
 }
-.button_validate:hover {
+.validate_button:hover {
 background-color: #1D6154;	
 transition: 0.4s;
 }

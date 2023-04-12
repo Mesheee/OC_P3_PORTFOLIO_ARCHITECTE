@@ -1,5 +1,4 @@
 //RECUPERATION DES DONNEES API
-// Stocke les données récupérées dans une variable
 let projects;
 // Récupère les données des projets depuis l'API et les traite en JSON
 fetch("http://localhost:5678/api/works")
@@ -7,42 +6,37 @@ fetch("http://localhost:5678/api/works")
   .then((data) => {
     // Stocke les données récupérées dans la variable projects
     projects = data;
-    // Ajoute les projets à la section galerie
-    addProjects(projects);
-    // Ajoute les projets à la modale
-    addModal(projects);
+    galleryProjects(projects);
+    modalProjects(projects);
   })
   .catch((error) => console.error(error));
 
-
-
-// WORKS // 
+// PROJETS // 
 // Ajoute les projets à la section galerie
-function addProjects(projects) {
+function galleryProjects(projects) {
   const sectionGallery = document.querySelector(".gallery");
   // Parcourt chaque projet dans le tableau projects
   for (const project of projects) {
     // Destructure les propriétés id, title et imageUrl de l'objet project
     const { id, title, imageUrl } = project;
-    // Crée un nouvel élément figure pour contenir l'image et le titre du projet
+    // Crée un nouvel élément figure pour contenir l'image et le titre
     const projectElement = document.createElement("figure");
     projectElement.id = id;
-    // Crée un nouvel élément image avec la source définie sur l'URL de l'image du projet
+    // Crée un nouvel élément image avec la source définie sur l'URL
     const imageElement = new Image();
     imageElement.src = imageUrl;
     imageElement.crossOrigin = "anonymous";
-    // Crée un nouvel élément figcaption pour contenir le titre du projet
+    // Crée un nouvel élément figcaption pour contenir le titre
     const titleElement = document.createElement("figcaption");
     titleElement.textContent = title;
-    // Ajoute les éléments image et titre à l'élément project
+    titleElement.classList.add("project_title_gallery");
     projectElement.appendChild(imageElement);
     projectElement.appendChild(titleElement);
-    // Ajoute l'élément project à la section galerie
     sectionGallery.appendChild(projectElement);
   }
 }
 
-//FILTERS//
+//FILTRES//
 // Supprime tous les éléments de la section galerie
 function deleteList() {
   document.querySelector(".gallery").textContent = "";
@@ -56,29 +50,28 @@ btnAll.id = "category";
 btnAll.classList.add("button_filters");
 filters.appendChild(btnAll);
 
-// Lorsque le bouton "Tous" est cliqué, supprime les projets actuels et affiche tous les projets
+// Supprime les projets actuels et affiche tous les projets
 btnAll.addEventListener("click", () => {
   deleteList();
-  addProjects(projects);
+  galleryProjects(projects);
 });
 
-// Récupère les données de catégorie depuis l'API et ajoute des boutons pour chaque catégorie
+// Récupère les données de catégorie depuis l'API et ajoute des boutons
 fetch("http://localhost:5678/api/categories")
   .then((response) => response.json())
   .then((categories) => {
-    // Parcourt chaque catégorie dans le tableau categories
     for (const category of categories) {
-      // Crée un nouvel élément bouton pour la catégorie
+      // Crée un nouvel élément bouton pour chaque catégorie
       const bouton = document.createElement("button");
       bouton.classList.add("button_filters");
       bouton.textContent = category.name;
-      // Lorsque le bouton de la catégorie est cliqué, filtre les projets par catégorie et les affiche
+      // Filtre les projets par catégorie et les affiche
       bouton.addEventListener("click", () => {
         const filteredProjects = projects.filter(
           (project) => project.category.name === category.name
         );
         deleteList();
-        addProjects(filteredProjects);
+        galleryProjects(filteredProjects);
       });
     filters.appendChild(bouton);
   }
